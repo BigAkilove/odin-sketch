@@ -1,0 +1,23 @@
+body  { 
+    margin: 0; 
+    padding: 0;  
+} 
+        
+.container-div {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    gap: 0;
+}
+
+.child-div {
+    flex-grow: 1;
+    height: 30px;
+    width: 30px;
+    background-color: aqua;
+}
+
+.child-div:nth-child(16n) {
+    display: block;
+    background-color: bisque;
+}
