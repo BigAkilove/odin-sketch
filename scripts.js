@@ -28,7 +28,11 @@ document.addEventListener('mouseover', (e) => {
 
     switch(target.className) {
         case 'child-div':
+            let randomColor = Math.random()*255;
+            let randomColor2 = Math.random()*255;
+            let randomColor3 = Math.random()*255;
             target.classList.add('new-display');
+            target.style.backgroundColor = 'rgb(' + randomColor + ',' + randomColor2 + ',' + randomColor3 + ')';
             break;
     }
         
