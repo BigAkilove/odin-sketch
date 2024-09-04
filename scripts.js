@@ -10,6 +10,7 @@ let containerDiv = document.querySelector('.container-div');
 
 let numberOfLines = 16;
 
+
 function remakeTheHtml () {
     containerDiv.innerHTML = '';
     lineContainer.innerHTML= '';
@@ -20,8 +21,12 @@ function remakeTheHtml () {
     for (let i=0; i<numberOfLines; i++) {
         containerDiv.appendChild(lineContainer.cloneNode(true));
     }
+    
 }
 remakeTheHtml();
+
+let xav = document.getElementsByClassName('child-div')
+console.log(xav.length)
 
 document.addEventListener('mouseover', (e) => {
     let target = e.target;
@@ -37,21 +42,23 @@ document.addEventListener('mouseover', (e) => {
     }
         
 });
-document.addEventListener('mouseout', (e) => {
+
+function addMouseOutEvent (e) {
     let target = e.target;
 
     switch(target.className) {
         case 'child-div new-display':
             target.classList.remove('new-display');
+            target.style.backgroundColor = 'aqua'
             break;
     }
- });
+ }
+document.addEventListener('mouseout', addMouseOutEvent);
 
-/* let containerDivAll = document.querySelectorAll('.child-div')
-
+/*
 containerDivAll.forEach(() => {
     addEventListener('mouseover', (e) => {
-        let target = e.target;
+        let target = e.target;SSS
         target.classList.add('new-display');
     });
     addEventListener('mouseout', (e) => {
@@ -66,4 +73,10 @@ gridButton.addEventListener('click', () => {
     let inputGrid = prompt('Please choose the divs per line, up to 100');
     numberOfLines = inputGrid;
     remakeTheHtml();
+})
+
+let colorsButton = document.querySelector('.colors-button')
+colorsButton.addEventListener('click', () => { 
+    console.log('this works')
+    document.removeEventListener('mouseout',addMouseOutEvent())
 })

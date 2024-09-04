@@ -1,6 +1,6 @@
-body  { 
+html, body { 
     margin: 0; 
-    padding: 0;
+
     width: 100%;
     height: 100%;
 } 
@@ -8,17 +8,17 @@ body  {
 .container-div {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: stretch;
+    justify-content: stretch;
     margin: 0;
     gap: 0;
+    height: 97vh;
+    width: 50vw;
 }
 
-.child-div {
-    height: 50px;
-    width: 50px;
+.child-div { 
     background-color: aqua;
-    flex-shrink: 1;
+    flex: 1;
 }
 
 /*.child-div:nth-child(16n) {
@@ -31,7 +31,7 @@ body  {
 }
 
 .line-div {
-    flex-shrink: 1;
+    flex: 1;
     display: flex;
     margin: 0;
     gap: 0;
