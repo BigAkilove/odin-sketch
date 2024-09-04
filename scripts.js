@@ -10,6 +10,7 @@ let containerDiv = document.querySelector('.container-div');
 
 let numberOfLines = 16;
 
+let darkenedRGB = -12.25
 
 function remakeTheHtml () {
     containerDiv.innerHTML = '';
@@ -21,26 +22,28 @@ function remakeTheHtml () {
     for (let i=0; i<numberOfLines; i++) {
         containerDiv.appendChild(lineContainer.cloneNode(true));
     }
-    
+    darkenedRGB = -12.25
 }
 remakeTheHtml();
 
 let xav = document.getElementsByClassName('child-div')
 console.log(xav.length)
 
-document.addEventListener('mouseover', (e) => {
-    let target = e.target;
 
+document.addEventListener('mouseover', (e) => {
+
+    let target = e.target;
     switch(target.className) {
         case 'child-div':
-            let randomColor = Math.random()*255;
-            let randomColor2 = Math.random()*255;
-            let randomColor3 = Math.random()*255;
+            let randomColor = Math.random()*255 + darkenedRGB;
+            let randomColor2 = Math.random()*255 + darkenedRGB;
+            let randomColor3 = Math.random()*255 + darkenedRGB;
             target.classList.add('new-display');
             target.style.backgroundColor = 'rgb(' + randomColor + ',' + randomColor2 + ',' + randomColor3 + ')';
+            console.log(randomColor,randomColor2,randomColor3, darkenedRGB)
             break;
     }
-        
+    darkenedRGB = darkenedRGB - 12.25
 });
 
 function addMouseOutEvent (e) {
@@ -76,7 +79,7 @@ gridButton.addEventListener('click', () => {
 })
 
 let colorsButton = document.querySelector('.colors-button')
-colorsButton.addEventListener('click', () => { 
-    console.log('this works')
-    document.removeEventListener('mouseout',addMouseOutEvent())
-})
+//colorsButton.addEventListener('click', () => { 
+//    console.log('this works')
+//    document.removeEventListener('mouseout',addMouseOutEvent())
+//})
