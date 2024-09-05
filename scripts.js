@@ -10,7 +10,7 @@ let containerDiv = document.querySelector('.container-div');
 
 let numberOfLines = 16;
 
-let darkenedRGB = -12.25
+let darkenedRGB = 0
 
 function remakeTheHtml () {
     containerDiv.innerHTML = '';
@@ -22,7 +22,7 @@ function remakeTheHtml () {
     for (let i=0; i<numberOfLines; i++) {
         containerDiv.appendChild(lineContainer.cloneNode(true));
     }
-    darkenedRGB = -12.25
+   // darkenedRGB = -12.25
 }
 remakeTheHtml();
 
@@ -43,7 +43,7 @@ document.addEventListener('mouseover', (e) => {
             console.log(randomColor,randomColor2,randomColor3, darkenedRGB)
             break;
     }
-    darkenedRGB = darkenedRGB - 12.25
+   // darkenedRGB = darkenedRGB - 12.25
 });
 
 function addMouseOutEvent (e) {
